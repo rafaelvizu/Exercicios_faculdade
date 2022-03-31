@@ -1,27 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 int main() {
-	float av1, av2, av3, av4, media;
-	
-	printf("AV1: ");
-	scanf("%f", &av1);
-	
-	printf("AV2: ");
-	scanf("%f", &av2);
-	
-	printf("AV3: ");
-	scanf("%f", &av3);
-	
-	printf("AV4: ");
-	scanf("%f", &av4);
-	
-	media = (av1+av2+av3+av4) / 4;
-	
-	printf("\n\nAV1\tAV2\tAV3\tAV4\n\n");
-	printf("%0.1f\t%0.1f\t%0.1f\t%0.1f", av1, av2, av3, av4);
-	printf("\n\n\tMEDIA: %0.1f", media);
-	
-	
-	return 0;
+    float d, km_combustivel;
+
+    printf("Qual a distancia do percurso? (Km) ");
+    scanf("%f", &d);
+
+    printf("Quantos km o carro faz por litro? (Km/1L) ");
+    scanf("%f", &km_combustivel);
+
+    printf("\nO carro gastou %0.1f litro(s) de combustivel\n\n", (d / km_combustivel));
+
+
+    system("pause");
+
+    return 0;
 }
