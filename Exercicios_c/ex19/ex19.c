@@ -3,7 +3,17 @@
 #include <ctype.h>
 #include <string.h>
 
-int vericarStrDecimal(char valor[30]) {
+int count(char str[250], char caracter) {
+	int cont = 0;
+	for (int i=0; i<strlen(str); i++){
+		if (str[i] == caracter) {
+			cont++;
+		}
+	}
+	return cont;
+}
+
+int vericarStrDecimal(char valor[250]) {
     for (int a=0; a<strlen(valor); a++) {
         if (isdigit(valor[a]) == 0)
         {
@@ -16,7 +26,7 @@ int vericarStrDecimal(char valor[30]) {
 }
 
 int main() {
-    char num_str[30];
+    char num_str[250];
 
     printf("Digite um valor: ");
     scanf("%s", &num_str);
@@ -29,9 +39,11 @@ int main() {
         {
             printf("%d\tx\t%d\t=\t%d\n", num_int, i, (num_int * i));
         }
+    } else if (count(num_str, '.') == 1){
+        printf("Valor invalido. Digite um numero inteiro!\n");
     } else {
-        printf("\nValor invalido. Tente de novo!\n");
-    }
+    	printf("Valor invalido. Tente novamente!\n");
+	}
 
     system("pause");
     return 0;
