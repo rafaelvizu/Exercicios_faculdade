@@ -127,7 +127,7 @@ void menuConta(int idConta) {
                printf("Digite o valor ira sacar: R$");
                scanf("%f", &valor);
 
-               if (valor < saldo[idConta]) 
+               if (valor <= saldo[idConta]) 
                {
                     saldo[idConta] -= valor;
                     printf("\nValor de %0.2f sacado com sucesso!\n\n", valor);
