@@ -9,7 +9,7 @@ int main() {
 
      for (int i = 0; i < 4; i++)
      {
-          printf("\nColuna: %d\n\n", i);
+          printf("\nLinha: %d\n\n", i);
           for (int f = 0; f < 2; f++)
           {
                printf("Digite o valor [%d][%d]: ",i,f);
