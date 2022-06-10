@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 // variaveis globais
 int totID = 0;
@@ -170,6 +169,8 @@ void acessarConta() {
 
 
 int main() {
+     logoBanco();
+     
      int escolha=0;
      while (escolha!=3)
      {
@@ -193,6 +194,7 @@ int main() {
                break;
           
           default:
+               printf("\n\nValor invalido. Tende novamente!\n");
                break;
           }
      }    
