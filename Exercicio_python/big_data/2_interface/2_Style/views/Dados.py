@@ -21,9 +21,8 @@ class Dados:
           ax1 = graph.add_subplot(111)
           bar1 = FigureCanvasTkAgg(graph, self.root)
 
-          bar1.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH)
-          
-          data = data.head()
+          bar1.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH)          
+          data = data.head().sort_values(by='price', ascending=False)
 
           ax1.bar(data['name'], data['price'], color='blue')
           #data.plot(kind='bar', legend=True, ax=ax1)

@@ -1,19 +1,21 @@
 from db.dbConn import Database as db
 import pandas as pd
+import datetime
 
 db.createTable('services', '''
           id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
           name TEXT NOT NULL,
           description TEXT,
           price REAL NOT NULL,
-          status TEXT NOT NULL
+          status TEXT NOT NULL,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
 ''')
 
 class Services:
      @staticmethod
      def create(name, description, price, status):
           try:
-               db.static_cur.execute(f'INSERT INTO services (name, description, price, status) VALUES ("{name}", "{description}", "{price}", "{status}")')
+               db.static_cur.execute(f'INSERT INTO services (name, description, price, status) VALUES ("{name}", "{description}", "{price}", "{status}") ')
                db.static_conn.commit()
                print(f'Serviço {name} criado com sucesso!')
                return True
@@ -26,7 +28,7 @@ class Services:
           try:
                db.static_cur.execute('SELECT * FROM services')
                servicos = db.static_cur.fetchall()     
-               return pd.DataFrame(servicos, columns=['id', 'name', 'description', 'price', 'status'])
+               return pd.DataFrame(servicos, columns=['id', 'name', 'description', 'price', 'status', 'created_at'])
           except:
                print('Erro ao ler os serviços!')
                return False
