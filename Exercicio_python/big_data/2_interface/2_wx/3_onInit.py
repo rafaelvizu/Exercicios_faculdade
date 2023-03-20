@@ -15,6 +15,3 @@ class DeviceApp(wx.App):
 
         the_frame.Show(True)
         return True
-    
-
-print(DeviceApp().OnInit())
