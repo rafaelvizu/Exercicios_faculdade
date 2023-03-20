@@ -1,9 +1,9 @@
 from db.Conn import Connection
 
-Connection.createTable('contatos', 'id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, email TEXT, telefone TEXT, data_nascimento TEXT')
+Connection.createTable('contatos', 'id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, email TEXT, telefone TEXT NOT NULL, data_nascimento TEXT')
 
 class Contatos:
-     def __init__(self, nome, email, telefone, data_nascimento):
+     def __init__(self, nome, telefone, email, data_nascimento):
           self.nome = nome
           self.email = email
           self.telefone = telefone
