@@ -2,3 +2,4 @@
 *.xlsx
 build/
 dist/
+*.spec
